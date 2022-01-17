@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% extends 'bms/main.html' %}
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% block content %}
+    <title>Edit Book Record</title>
+    <link rel="stylesheet" href="{% static 'css/edit_book.css' %}">
+  </head>
+  <body>
+    
+    <div class="" id="main">
+      <h2>Edit Book Record </h2>
+      <form class="" action="http://localhost:8000/bms/edit/" method="post">
+        <input type="hidden" name="bookid" value="{{book.id}}">
+        {% csrf_token %}
+        <div class="box">
+          {{form.title.label_tag}}
+            {{form.title}}
+        </div>
+        <div class="box">
+          {{form.author.label_tag}}
+          {{form.author}}
+        </div>
+        <div class="box">
+          {{form.price.label_tag}}
+          {{form.price}}
+        </div>
+        <div class="box">
+          {{form.publisher.label_tag}}
+          {{form.publisher}}
+        </div>
+        
+
+            <input type="submit" name="" value="Update" id="btn">
+
+
+      </form>
+    </div>
+    {% endblock content %}
+  </body>
+</html>

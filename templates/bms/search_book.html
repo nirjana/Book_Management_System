@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends 'bms/main.html' %}
+{% load static %}
+<html lang="en" dir="ltr">
+  {% block content %}
+  <head>
+    <meta charset="utf-8">
+    <title>Search Book</title>
+    <link rel="stylesheet" href="{% static 'css/search_book.css' %}">
+  </head>
+  <body>
+    
+
+
+    <div class="" id="main">
+      <h2>Search Book Record</h2>
+      <div class="search">
+        <form class="" action="http://localhost:8000/bms/search/" method="post">
+          {% csrf_token %}
+          <div class="box">
+              {{form}}
+          </div>
+
+            <input  type="submit" name="" value="Search" id="btn">
+        </form>
+      </div>
+
+      {% if books%}
+      <table>
+        <tr>
+          <th>Book title</th>
+          <th>Author</th>
+          <th>Price</th>
+          <th>Publisher</th>
+        </tr>
+
+        {% for book in books %}
+        <tr>
+          <td>{{book.title}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.price}}</td>
+          <td>{{book.publisher}}</td>
+          <td><a href="http://localhost:8000/bms/edit-book?bookid={{book.id}}">Edit</a></td>
+          <td><a href="http://localhost:8000/bms/delete-book?bookid={{book.id}}">Delete</a></td>
+        </tr>
+        {% endfor%}
+
+      </table>
+      {% endif%}
+    </div>
+    {% if  not books %}
+    <p>No record found</p>
+    {% endif %}
+    {% endblock content %}
+  </body>
+</html>

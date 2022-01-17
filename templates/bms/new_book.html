@@ -1,0 +1,50 @@
+
+{% extends 'bms/main.html' %}
+<!DOCTYPE html>
+   
+{% load static %}
+{% block content %}
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="{% static '/css/new_book.css' %}">
+    <meta charset="utf-8">
+    <title>New book Record</title>
+   
+  </head>
+ 
+  <body>
+
+
+    <h2>Add New Record</h2>
+    <div class="" id="container">
+
+      <form class="" action="http://localhost:8000/bms/add/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="box">
+          {{form.title.label_tag}}
+          {{form.title}}
+        </div>
+
+        <div class="box">
+          {{form.author.label_tag}}
+          {{form.author}}
+        </div>
+        <div class="box">
+          {{form.price.label_tag}}
+          {{form.price}}
+        </div>
+        <div class="box">
+          {{form.publisher.label_tag}}
+          {{form.publisher}}
+        </div>
+
+        
+          <input type="submit" name="" value="Save" id="btn">
+      </form>
+    </div>
+
+    
+    
+    {% endblock content %}
+  </body>
+</html>

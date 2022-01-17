@@ -1,0 +1,174 @@
+
+{% extends 'bms/main.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% block content %}
+    <title>All Books Records</title>
+    <link rel="stylesheet" href="{% static 'css/view_books.css' %}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  </head>
+  <style>
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+
+
+
+  *{
+    margin:0;
+    padding:0;
+
+  }
+
+  #header h1{
+    text-align:center;
+    color:white;
+    display: block;
+  }
+body::before{
+  content: "";
+  background: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Findianexpress.com%2Farticle%2Fbooks-and-literature%2Fnational-library-to-upload-books-on-indian-culture-on-web-7371754%2F&psig=AOvVaw1NlET0FtzPg6aPDI6oRVhm&ust=1642150756673000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMidz8OurvUCFQAAAAAdAAAAABAb') no-repeat center center/cover;
+  position: absolute;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  top:0;
+  left:0;
+  opacity: 0.5;
+  font-family: "Lato", sans-serif;
+}
+  #header #nav ul{
+    display:flex;
+    background-color:black;
+    justify-content: flex-end;
+  padding: 9px 0px;
+
+  }
+  #header #nav ul li{
+    list-style:none;
+
+    margin:0px 5px;
+  }
+  #header #nav ul li a{
+    text-decoration:none;
+    padding: 7px 7px;
+    font-family: verdana;
+    color:white;
+  }
+  #header #nav ul li a:hover{
+    color:black;
+    background-color: white;
+    border-radius:20px;
+  }
+
+
+.main{
+        display: none;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        padding: 26px;
+        width:50%;
+        margin:100px auto;
+}
+
+.main form .loginform input{
+  
+
+width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.main form .loginform input:focus
+{
+  border:2px solid blue;
+  box-shadow:3px 7px  4px blue;
+}
+.main form .loginform label{
+  font-family: verdana;
+}
+body h3{
+  text-align: center;
+  font-family: verdana;
+}
+  </style>
+
+<style>
+  body {
+    background-image: url('static/css/book1.png');
+  }
+  </style>
+
+  <body>
+  
+    
+
+
+  <h3>Book Management System</h3>
+
+
+
+
+  
+<div class="main">
+
+
+  <form  method="post">
+    {% csrf_token %}
+    <div class="loginform">
+      <label for="username">username</label>
+      <input type="text" name="username" value="" placeholder="Enter username" required>
+    </div>
+
+      <div class="loginform">
+        <label for="password">password</label>
+        <input type="password" name="password" value="" placeholder="User password" required>
+      </div>
+
+      <button type="submit" class="btn btn-black">Login</button>
+         
+
+  </form>
+<p>{{error}}</p>
+</div>
+<!-- javascript -->
+<script>
+  let login=document.getElementById('login').addEventListener('click',function(){
+    let main=document.querySelector('.main')
+    if(main.style.display=='block')
+      main.style.display='none'
+    else{
+      main.style.display='block'
+    }
+  })
+</script>
+{% endblock content %}
+
+  </body>
+</html>

@@ -1,0 +1,54 @@
+{% extends 'bms/main.html' %}
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    {% block content %}
+    <meta charset="utf-8">
+    <title>All Books Records</title>
+    <link rel="stylesheet" href="{% static 'css/view_books.css' %}">
+    
+  </head>
+  <body>
+   
+    <div class="" id="main">
+      <h2>All Book Record </h2>
+      <table>
+        <caption>Book List</caption>
+        <tr>
+          <th>Book Title</th>
+          <th>Author Name</th>
+          <th>price</th>
+          <th>Publisher</th>
+          <th>Stock_Status</th>
+        
+          <th>Update</th>
+        </tr>
+
+
+        {% for book in books %}
+        <tr>
+          <td>{{book.title}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.price}}</td>
+          <td>{{book.publisher}}</td>
+         {%if book.status %}
+         <td><small class="badgebadge-success">Sold</small></td>
+         {%else%}
+ <td><small class="badgebadge-warning">Not Sold</small></td>
+{%endif%}
+
+         <td><a href="http://localhost:8000/bms/edit-book?bookid={{book.id}}">Edit</a></td>
+          <td><a href="http://localhost:8000/bms/delete-book?bookid={{book.id}}">Delete</a></td>
+        </tr>
+        {% endfor%}
+      </table>
+    </div>
+    {% endblock content %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+</html>

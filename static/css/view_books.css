@@ -1,0 +1,73 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+
+
+
+*{
+  margin:0;
+  padding:0;
+
+}
+
+#header h1{
+color:rgb(169, 189, 166);
+font-family: 'math', verdana;
+}
+
+#header #nav ul{
+  display:flex;
+  background-color:rgb(15, 8, 8);
+  justify-content: space-around;
+padding: 12px 0px;
+
+}
+#header #nav ul li{
+  list-style:none;
+
+  margin:0px 5px;
+}
+#header #nav ul li a{
+  text-decoration:none;
+  padding: 7px 7px;
+  font-family: verdana;
+  color:white;
+}
+#header #nav ul li a:hover{
+  color:black;
+  background-color: white;
+  border-radius:20px;
+}
+#main{
+      margin-top: 27px;
+      width: 100%;
+}
+#main h2{
+  font-family: 'math', verdana;
+  text-align:center;
+}
+#main table{
+margin-top: 31px;
+font-family: 'Times New Roman', Times, serif;
+font-weight: bold;
+color: black;
+}
+table,th,td{
+  border:1px solid rgb(201, 26, 99);
+}
+table{
+  border-collapse:collapse;
+  border-spacing: 5px 10px;
+}
+table td,td{
+  padding:10px;
+}
+table caption{
+  caption-side: top;
+}
+table{
+  width: 90%;
+    margin: 30px auto;
+}
+ body {
+        color: chocolate;
+      }

@@ -1,0 +1,93 @@
+*{
+  margin:0;
+  padding:0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+
+
+
+*{
+  margin:0;
+  padding:0;
+
+}
+
+#header h1{
+  text-align:center;
+  color:white;
+  display: block;
+}
+
+#header #nav ul{
+  display:flex;
+  background-color:black;
+  justify-content: space-around;
+padding: 9px 0px;
+
+}
+#header #nav ul li{
+  list-style:none;
+
+  margin:0px 5px;
+}
+#header #nav ul li a{
+  text-decoration:none;
+  padding: 7px 7px;
+  font-family: verdana;
+  color:white;
+}
+#header #nav ul li a:hover{
+  color:black;
+  background-color: white;
+  border-radius:20px;
+}
+h2{
+  text-align:center;
+  font-family: verdana;
+}
+#container{
+  margin-top: 53px;
+      width: 90%;
+      margin: 75px auto;
+      /* background-color: bisque; */
+}
+form{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 170px;
+}
+
+#container form .box{
+  margin: 20px;
+  font-family: verdana;
+}
+#container form .box #publisher{
+margin-left: 15px;
+}
+#container form .box #price{
+margin-left: 43px;
+}
+#container form .box #author{
+  margin-left: 33px;
+}
+#container form .box #title{
+  margin-left: 49px;
+}
+#container form .box input{
+width: 712px;
+  padding: 6px 0px;
+}
+#btn{
+
+    background-color: #6a4caf; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
